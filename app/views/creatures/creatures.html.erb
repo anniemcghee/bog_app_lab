@@ -1,0 +1,7 @@
+Meet all the creatures!
+
+<% @creature.each do |creature| %>
+
+<li><a href='/creatures/<%= creature.id %>'><%= creature.name %></li></a>
+
+<% end %>

@@ -1,0 +1,8 @@
+This is the individual edit form page for <a href='/creatures/<%= @creature.id %>'><%= @creature.name %></a>
+
+  <%= form_for @creature do |f| %>
+  <%= f.text_field :name, :placeholder => "Creature Name" %>
+  <%= f.text_field :desc, :placeholder => "Brief Description" %>
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+  <% end %>

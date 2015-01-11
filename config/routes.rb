@@ -3,14 +3,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'creatures#index'
+  # root 'home#home'
 
-  get '/' => 'creatures#index'
-  get 'creatures' => 'creatures#creatures'
-  get 'creatures/new' => 'creatures#new'
-  post 'creatures' => 'creatures#create'
-  patch 'creatures' => 'creatures#create'
-  get 'creatures/:id' => 'creatures#show'
+   get '/' => 'creatures#home'
+
+  resources :creatures
+
+  # get 'creatures' => 'creatures#creatures'
+  # get 'creatures/new' => 'creatures#new'
+  # post 'creatures' => 'creatures#create'
+  # # patch 'creatures' => 'creatures#create'
+  # get 'creatures/:id' => 'creatures#show'
+  # get 'creatures/:id/edit' => 'creatures#edit', as: :edit # this adds prefix edit to route so I can link_to
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

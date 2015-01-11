@@ -1,3 +1,33 @@
-<a href='/creatures'>Browse creatures</a>
-<br>
-<a href='creatures/new'>Add a creature</a>
+
+<table class="table table-hover">
+<div class="row">
+  <div class="col-md-4"
+  <tr>
+      <h2>Name</h2>
+  </div>
+  <div class="col-md-4">
+      <h2>Description</h2>
+  </div>
+  </tr>
+</div>
+<% @creature.each do |creature| %>
+<tr>
+<td>
+  <div class="col-md-4">
+      <%= creature.name %>
+  </div>
+  <div class="col-md-4">
+      <%= creature.desc %>
+  </div>
+  <div class="col-md-4">
+      <%= link_to "View", creature, class: "btn btn-primary" %>
+      <%= link_to "Delete", creature, method: :delete, class: "btn btn-primary" %>
+  </div>
+</td>
+</tr>
+
+
+<% end %>
+
+</table>
+

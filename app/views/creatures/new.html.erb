@@ -1,6 +1,6 @@
 Add a new creature!
 
-<%= form_for @creature, url: {action: "create"}, html: {class: "creature_form"} do |f| %>
+<%= form_for @creature do |f| %>
   <%= f.text_field :name, :placeholder => "Creature Name" %>
   <%= f.text_field :desc, :placeholder => "Brief Description" %>
   <%= f.submit "Create New Bog Creature" %>

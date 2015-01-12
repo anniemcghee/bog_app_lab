@@ -8,3 +8,18 @@ About <%= @creature.name %>:
 <br>
 <a href='/creatures/<%= @creature.id %>/edit'>Edit this creature.</a>
 <br>
+
+<h1> Find Flickr Photos </h1>
+
+<%= form_tag creature_path, :method => "get" do %>
+
+  <%= text_field_tag :search %>
+  <%= submit_tag "search", :name => nil %>
+
+<% end %>
+
+Results: <%= @search %>
+
+<%  @results.each do |photo| %>
+  <%= image_tag photo %>
+<% end %>

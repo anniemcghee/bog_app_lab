@@ -40,10 +40,27 @@ class CreaturesController < ApplicationController
 
   def show
     @creature = Creature.find(params[:id])
+
+    @search = params[:search]
+    list   = flickr.photos.search :text => @search, :sort => "relevance"
+
+    @results = list.map do |photo|
+      FlickRaw.url_m(photo)
+    end
   end
 
   def edit
     @creature = Creature.find(params[:id])
   end
+
+  # def results
+  # @search = params[:search]
+  # list   = flickr.photos.search :text => @search, :sort => "relevance"
+
+  # @results = list.map do |photo|
+  #   FlickRaw.url_s(photo)
+  # end
+
+
 
 end
